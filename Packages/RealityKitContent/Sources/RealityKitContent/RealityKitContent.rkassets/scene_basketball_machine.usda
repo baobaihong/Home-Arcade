@@ -22,33 +22,16 @@ def Xform "Root"
         customData = {
             float3 rotationEulerHint = (-1.5707964, 0, 0)
         }
-        prepend references = @arcade_basketball_machine.usdz@
+        prepend references = @arcade_basketball_machine.usdc@
     )
     {
         quatf xformOp:orient = (0.70710677, -0.70710677, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        float3 xformOp:translate = (0, 0, -1.1)
+        float3 xformOp:translate = (0, 0, -2)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
-        over "frame"
+        over "backPlane"
         {
-            quatf xformOp:orient = (1, -2.1855689e-8, 0, 0)
-            float3 xformOp:scale = (0.001, 0.001, 0.001)
-            double3 xformOp:translate = (-0.007874908857047558, 0.224724680185318, 1.2400634288787842)
-            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-        }
-
-        over "rim"
-        {
-        }
-
-        over "Hoop_Dreams_game_machine_part_22"
-        {
-            quatf xformOp:orient = (1, -2.1855689e-8, 0, 0)
-            float3 xformOp:scale = (0.001, 0.001, 0.001)
-            double3 xformOp:translate = (-0.008055664598941803, 1.3459111452102661, 1.7534433603286743)
-            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-
             def RealityKitComponent "Collider"
             {
                 uint group = 1
@@ -85,6 +68,14 @@ def Xform "Root"
                 {
                 }
             }
+        }
+
+        over "rim"
+        {
+            quatf xformOp:orient = (1, -2.1855689e-8, 0, 0)
+            float3 xformOp:scale = (0.001, 0.001, 0.001)
+            double3 xformOp:translate = (0.00020874023903161287, 0.18925945460796356, 0.9598639011383057)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
     }
 }

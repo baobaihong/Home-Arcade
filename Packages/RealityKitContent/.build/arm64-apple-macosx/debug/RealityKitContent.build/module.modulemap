@@ -1,0 +1,4 @@
+module RealityKitContent {
+    header "/Users/jason/Playgrounds/Home Arcade/Home Arcade/Packages/RealityKitContent/.build/arm64-apple-macosx/debug/RealityKitContent.build/RealityKitContent-Swift.h"
+    requires objc
+}
