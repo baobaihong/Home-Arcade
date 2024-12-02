@@ -22,7 +22,7 @@ class BallSystem: System {
     func update(context: SceneUpdateContext) {
         for entity in context.entities(matching: Self.query, updatingSystemWhen: .rendering) {
             guard let modelEntity = entity as? ModelEntity else { return }
-            if modelEntity.position.y < 0 {
+            if modelEntity.position.y < -2 {
                 // Reset position
                 modelEntity.position = SIMD3<Float>(x: 0, y: 1.5, z: -1.0)
                 modelEntity.resetPhysicsTransform()

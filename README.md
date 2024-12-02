@@ -38,10 +38,6 @@ A VisionOS basketball game that lets you shoot hoops in mixed reality using hand
 - `/ViewModel` - App state management
 - `/Packages/RealityKitContent` - 3D assets and materials
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
