@@ -15,7 +15,7 @@ struct ForceDragGesture: Gesture {
                 strength *= strength
             }
 
-            let forceFactor: Float = 15000
+            let forceFactor: Float = 10000
             let force = forceFactor * strength * simd_normalize(direction)
             modelEntity.addForce(force, relativeTo: nil)
             
