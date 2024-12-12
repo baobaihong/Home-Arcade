@@ -18,8 +18,6 @@ struct ImmersiveView: View {
     
     var body: some View {
         RealityView { content in
-            // addBall(content)
-            // await addMachine(content)
             content.add(await model.setupContentEntity())
         }
         .gesture(ForceDragGesture())
@@ -38,16 +36,4 @@ struct ImmersiveView: View {
             await model.processReconstructionUpdates()
         }
     }
-    
-    // func addBall(_ content: RealityViewContent) {
-    //     let ball = Entity.ball()
-    //     content.add(ball)
-    // }
-    
-    // func addMachine(_ content: RealityViewContent) async {
-    //     if let scene = try? await Entity.load(named: "scene_basketball_machine", in: realityKitContentBundle) {
-    //         scene.position = SIMD3<Float>(x: 0, y: 0, z: -0)
-    //         content.add(scene)
-    //     }
-    // }
 }

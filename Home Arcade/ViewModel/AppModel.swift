@@ -35,8 +35,15 @@ class AppModel {
     /// Setup the content entity with a ball and a basketball machine
     func setupContentEntity() async -> Entity {
         let ball = Entity.ball()
-        if let scene = try? await Entity.load(named: "scene_basketball_machine", in: realityKitContentBundle) {
+        let rim = await Entity.createRim()
+        if let scene = try? await Entity(named: "scene_basketball_machine", in: realityKitContentBundle) {
             scene.position = SIMD3<Float>(x: 0, y: 0, z: -0)
+            
+            // Rim entity setup
+            rim.setPosition(SIMD3(x: 0, y: 1.87, z: -3.06), relativeTo: nil)
+            rim.orientation = simd_quatf(angle: .pi/2, axis: SIMD3<Float>(1, 0, 0))
+            scene.addChild(rim)
+            
             contentEntity.addChild(ball)
             contentEntity.addChild(scene)
         }
